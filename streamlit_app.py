@@ -6,7 +6,6 @@ st.write(
     """
 )
 
-from snowflake.snowpark import Session
 # Snowflake connection parameters
 snowflake_config = {
     'account': 'NONGWKL-MOB76819',
@@ -17,6 +16,10 @@ snowflake_config = {
     'database': 'SMOOTHIES',  # Optional
     'schema': 'PUBLIC',  # Optional
 }
+
+
+from snowflake.snowpark import Session
+
 # Create a Snowflake session
 session = Session.builder.configs(snowflake_config).create()
 
