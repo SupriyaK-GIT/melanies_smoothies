@@ -17,6 +17,8 @@ snowflake_config = {
     'schema': 'PUBLIC',  # Optional
 }
 
+use st.secrets
+cnx=st.connection('snowflake')
 
 from snowflake.snowpark import Session
 
