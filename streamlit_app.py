@@ -1,5 +1,4 @@
 import streamlit as st
-from snowflake.snowpark import Session
 
 st.title(" :cup_with_straw: Pending Smoothie orders :cup_with_straw:")
 st.write(
@@ -7,6 +6,7 @@ st.write(
     """
 )
 
+from snowflake.snowpark import Session
 # Snowflake connection parameters
 snowflake_config = {
     'account': 'NONGWKL-MOB76819',
