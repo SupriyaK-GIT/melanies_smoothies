@@ -19,11 +19,3 @@ snowflake = {
 
 cnx=st.connection('snowflake')
 
-from snowflake.snowpark import Session
-
-# Create a Snowflake session
-session = Session.builder.configs(snowflake_config).create()
-
-# Fetch data
-def fetch_data(query):
-    return session.sql(query).collect()
