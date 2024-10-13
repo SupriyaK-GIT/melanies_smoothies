@@ -7,7 +7,7 @@ st.write(
 )
 
 # Snowflake connection parameters
-snowflake_config = {
+snowflake = {
     'account': 'NONGWKL-MOB76819',
     'user': 'SupriyaK',
     'password': 'L3arnSFlake',
@@ -17,7 +17,6 @@ snowflake_config = {
     'schema': 'PUBLIC',  # Optional
 }
 
-use st.secrets
 cnx=st.connection('snowflake')
 
 from snowflake.snowpark import Session
