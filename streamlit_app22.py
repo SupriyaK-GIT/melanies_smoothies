@@ -1,8 +1,9 @@
 # Import python packages
 import streamlit as st
-#import snowflake.connector
+from snowflake.snowpark.context import get_active_session
+from snowflake.snowpark.functions import col, when_matched
 
-#from snowflake.snowpark.functions import col
+
 
 # Write directly to the app
 st.title(" :cup_with_straw: Pending Smoothie orders :cup_with_straw:")
@@ -11,9 +12,7 @@ st.write(
     """
 )
 
-use st.secrets
-cnx=st.connection('snowflake')
-session = cnx.session()
+session = get_active_session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 #st.dataframe(data=my_dataframe, use_container_width=True)
 if my_dataframe:
@@ -33,4 +32,3 @@ if my_dataframe:
                 st.write('something went wrong')
 else:
     st.success('No Pending order', icon = '👍')
-
