@@ -3,7 +3,7 @@ import streamlit as st
 
 #use st.secrets
 
-from snowflake.snowpark.functions import col
+#from snowflake.snowpark.functions import col
 
 # Write directly to the app
 st.title(" :cup_with_straw: Pending Smoothie orders :cup_with_straw:")
