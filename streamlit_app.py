@@ -1,5 +1,6 @@
 # streamlit_app.py
 import streamlit as st
+from snowflake.snowpark import Session
 
 st.title(" :cup_with_straw: Pending Smoothie orders :cup_with_straw:")
 st.write(
@@ -17,7 +18,8 @@ snowflake = {
     'schema': 'PUBLIC',  # Optional
 }
 
-# Initialize connection.
-conn = st.connection("snowflake")
+
+# Create a Snowflake session
+session = Session.builder.configs(snowflake_config).create()
 
 
