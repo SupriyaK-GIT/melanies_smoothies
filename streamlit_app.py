@@ -1,7 +1,6 @@
 # Import python packages
 import streamlit as st
 
-#use st.secrets
 
 #from snowflake.snowpark.functions import col
 
@@ -12,6 +11,7 @@ st.write(
     """
 )
 
+use st.secrets
 cnx=st.connection('snowflake')
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
