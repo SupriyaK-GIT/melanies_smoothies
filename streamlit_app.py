@@ -1,7 +1,7 @@
 # Import python packages
 import streamlit as st
 
-u#se st.secrets
+#use st.secrets
 
 from snowflake.snowpark.functions import col
 
